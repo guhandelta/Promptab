@@ -1,7 +1,5 @@
+import { Nav } from "@components";
 import "@styles/globals.css"
-import { Inter } from "next/font/google"
-
-const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
   title: "Promptab",
@@ -17,6 +15,7 @@ const RootLayout = ({ children }) => {
         </div>
 
         <main className="app">
+          <Nav />
           {children}
         </main>
       </body>

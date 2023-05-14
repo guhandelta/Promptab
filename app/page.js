@@ -1,3 +1,4 @@
+import { Feed } from "@components"
 
 const Home = () => {
   return (
@@ -10,7 +11,7 @@ const Home = () => {
         Promptab is na opensource AI prompting tool for curious minds to discover and share creative prompts
       </p>
 
-    {/**/}      
+      <Feed />
     </section>
   )
 }
