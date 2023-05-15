@@ -10,6 +10,9 @@ const RootLayout = ({ children }) => {
   return (
     <html lang="en">
       <body>
+        {/*Browser session is passed as the prop to SessionProvider component, and is now made available to 
+           all the pages by wrapping the children of the layout component, as this is the HoC for all the 
+          components/pages just as _app.js was in the previous versions of NextJS  */}
         <Provider>
           <div className="main">
             <div className="gradient" />
