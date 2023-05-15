@@ -2,6 +2,8 @@
 
 import { Form } from '@components';
 import { useState } from 'react';
+import { useRouter } from "next/navigation"
+import { useSession } from 'next-auth/react';
 
 const CreatePrompt = () => {
 
@@ -10,6 +12,9 @@ const CreatePrompt = () => {
     prompt: "",
     tag: "",
   })
+
+  const router = useRouter()
+  const { data: session } = useSession();
 
   const createPrompt = async (e) =>{
     e.preventDefault();
@@ -27,7 +32,7 @@ const CreatePrompt = () => {
       })
 
       if(res.ok) { 
-        Router.push('/');
+        router.push('/');
       }
     } catch (error) {
       console.log(error);
@@ -38,7 +43,7 @@ const CreatePrompt = () => {
 
   return (
     <Form 
-      type="Create"
+      type="create"
       post={post}
       setPost={setPost}
       submitting={submitting}
